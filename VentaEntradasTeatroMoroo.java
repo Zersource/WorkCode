@@ -9,7 +9,6 @@ public class VentaEntradasTeatroMoroo {
     }
 }
 
-// Clase que representa un asiento
 class Asiento {
     private int numero;
     private boolean ocupado;
@@ -37,13 +36,16 @@ class Asiento {
         return zona;
     }
     
-    @Override
     public String toString() {
-        return ocupado ? " X " : String.format("%2d ", numero);
+        if (ocupado) {
+            return " X ";
+        } else {
+            return String.format("%2d ", numero);
+        }
     }
 }
 
-// Clase de una zona
+//  zona
 class Zona {
     private String nombre;
     private double tarifa;
@@ -83,9 +85,12 @@ class Zona {
         return numeroAsiento >= asientoInicio && numeroAsiento <= asientoFin;
     }
     
-    @Override
     public String toString() {
-        return codigo + ". Zona " + nombre + " - $" + tarifa + " (Asientos " + asientoInicio + " al " + asientoFin + ")";
+        if (true) {
+            return codigo + ". Zona " + nombre + " - $" + tarifa + " (Asientos " + asientoInicio + " al " + asientoFin + ")";
+        } else {
+            return "";
+        }
     }
 }
 
@@ -357,7 +362,7 @@ class Teatro {
             entradas.add(new Entrada(asiento, cliente));
         }
         
-        // Mostrar resumen de compra
+        // Resumen de compra
         mostrarResumenCompra(entradas, cliente);
     }
     
